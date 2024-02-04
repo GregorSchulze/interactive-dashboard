@@ -1,0 +1,506 @@
+/* ===================================== 
+   Page Styles
+======================================== */  
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+body {
+  margin: 0 auto;
+}
+
+h1, h3 {
+  padding: 10px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.section-line {
+  width: 100%
+}
+
+/* ===================================== 
+   Header Styles
+======================================== */  
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5px;
+  color: white;
+  background-color: rgba(98, 97, 189, .9);
+}
+
+.webapp {
+  font-size: 1em;
+  display: flex;
+  margin-left: 5px;
+}
+.sup {
+  font-size: 7px;
+}
+
+.bell-icon {
+  display: flex;
+  justify-content: space-evenly;
+  width: 35px;  
+  height: 35px; 
+  fill: white;
+  /* margin-left: 15px; */
+}
+
+.notifications {
+  position: relative;
+  right: +5px;
+  width: 0;
+  height: 0;
+  padding: 3px;
+  border-radius: 50%;
+  background-color: greenyellow;
+}
+
+.horizontale-linie {
+  width: .01em;
+  height: 30px;
+  background-color: #b3b3b3;
+  margin: 0 7px;
+
+}
+
+.user-img-1 {
+  display: flex;
+  justify-content: space-around;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+}
+
+.name {
+  font-size: .6em;
+}
+
+/* ===================================== 
+   Navigation Styles
+======================================== */  
+.nav {
+  background-color: rgba(75, 73, 142, 0.9);
+}
+
+.nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  padding: 10px 0; 
+  margin: 0;
+}
+
+
+
+.nav img,
+.nav-icon {
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  fill: white;
+}
+
+
+/* ===================================== 
+   Main Styles
+======================================== */
+.dashboard-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.headline {
+  font-size: 22px;
+  padding: 10px;
+  margin: 0;
+}
+
+.tab {
+  width: 100%;
+}
+
+#username {
+  width: 100%;
+  height: 65px;
+  background-color: #F4F6F6;
+  border-top: #fff;
+  border-right: #fff;
+  border-left: 1px solid #BCC8C8; 
+  border-bottom: 1px solid #BCC8C8;
+  box-shadow: 0 0 1px;
+}
+
+ /* ===================================== 
+   Traffic
+======================================== */
+.traffic {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.traffic-nav {
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
+}
+.traffic-nav-link {
+  list-style-type: none;
+}
+
+ /* ===================================== 
+   Social Stats
+======================================== */
+.flex-social {
+  display: flex;
+  flex-direction: column;
+}
+.social-container {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin: 10px;
+  background-color: rgb(231, 231, 231);
+  border: solid 1px rgb(199, 199, 199);;
+  border-radius: 5px;
+}
+
+.social-image {
+  display: flex;
+  justify-content: center;
+  margin: 1em;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%; 
+  margin: 10px;
+  background-color: rgba(75, 73, 142, 0.9); 
+}
+
+.social-circle {
+  fill: rgba(75, 73, 142, 0.9);
+  border-radius: 90px;
+}
+
+svg {
+  width: 50%; 
+  fill: white; 
+}
+
+.social-text {
+  margin: 0 15px;
+}
+
+.social-text p:first-of-type {
+  margin: 0;
+  color: rgba(75, 73, 142, 0.9);
+}
+
+.social-text p:nth-of-type(2) {
+  font-size: 40px;
+  margin: 0;
+  color: rgb(74, 74, 74);
+}
+
+.social-text p {
+  margin: 0;
+}
+
+.social-site {
+  color: #8288ef;
+  font-size: 20px;
+  margin: auto;
+}
+
+
+
+ /* ===================================== 
+   Members
+======================================== */
+.members {
+  display: flex;
+  flex-direction: column;
+}
+.profile-image {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin: 5px;
+}
+
+.member-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 15px;
+}
+
+.member-container p {
+  margin:  0;
+}
+
+hr {
+  width: 50vh;
+}
+
+
+
+/* ===================================== 
+   Recent Activity
+======================================== */
+.recent-activity {
+  display: flex;
+  flex-direction: column;
+}
+
+.recent-activity-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 15px;
+}
+
+.recent-activity-container p {
+  margin: 0;
+}
+
+
+/* ===================================== 
+   Settings
+======================================== */  
+
+.widget-container,
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* margin: 0 5px; */
+}
+
+.widget-container p {
+  margin: 50px;
+}
+
+.form-field {
+  width: 90%;
+  height: 10vh;
+  margin-bottom: 2.5vh;
+  background-color:#eeeeee;
+  border: solid 1px #b3b3b3;
+  border-radius: 5px;
+}
+
+
+.form-area {
+  width: 90%;
+  height: 30vh;
+  margin-bottom: 2.5vh;
+  background-color:#eeeeee;
+  border: solid 1px #b3b3b3;
+  border-radius: 5px;
+}
+
+.button-primary {
+  width: 90%;
+  height: 10vh;
+  color: white;
+  margin-bottom: 2.5vh;
+  background-color:#8288ef;
+  border: solid 1px #b3b3b3;
+  border-radius: 5px;
+}
+
+/* Toggle Switch */
+.toggle_switch {
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  margin-left: 9px;
+ } 
+ 
+ .toggle_switch p {
+  margin-left: 10px;
+ }
+ .toggle_switch span {
+  margin-right: 10px;
+ }
+.switch {
+  position: relative; 
+  width: 120px;
+  height: 40px;
+  border-radius: 25px;
+}
+.switch input {
+  appearance: none;
+  width: 110px;
+  height: 45px;
+  border-radius: 25px;
+  border: 2px solid rgba(165, 182, 182);
+  background: rgba(98, 97, 189, .9);
+  outline: none;
+}
+.switch input::before,
+.switch input::after {
+  z-index: 2;
+  position: absolute;
+  top: 65%;
+  transform: translateY(-50%);
+}
+.switch input::before {
+  content: "ON";
+  left: 15px;
+  color: #fff;
+}
+.switch input::after {
+  content: "OFF";
+  right: 15px;
+  color: #fff;
+}
+.switch label {
+  z-index: 1;
+  position: absolute;
+  top: 10px;
+  bottom: -1px;
+  left: 10px;
+  right: 78px;
+  border-radius: 50px;
+  border: 2px solid #A5B6B6;
+  background-color: #fff;
+  transition: left 0.2s, right 0.4s;
+}
+.switch input:checked+label {
+  right: 13px;
+  left: 74px;
+  top: 9px;
+  bottom: -1px;
+  transition: left 0.4s, right 0.2s;
+}
+.settings .toggle_switch:nth-child(2) {
+  margin-bottom: 25px;
+}
+.settings .toggle_switch:nth-child(3) {
+  margin-bottom: 50px;
+}
+
+/* Dropdown */
+
+#timezone {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  height: 10vh;
+  margin: 15px auto 20px;
+  color: #a7a7a7;
+  background-color: #eeeeee;
+  border-color: #b3b3b3;
+  border-radius: 5px;
+}
+
+.safe-button,
+.cancel-button {
+  display: block;
+  color: white;
+  width: 45%;
+  height: 55px;
+  border: solid 1px #b3b3b3;
+  border-radius: 5px;
+}
+
+.safe-button {
+  background-color:#8288ef;
+}
+
+.cancel-button {
+  background-color:#b3b3b3;
+}
+
+.settings-button {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 15px auto 20px;
+}
+
+
+/* ===================================== 
+   Media Queries
+======================================== */  
+.grid-container {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  grid-template-areas:
+  "header"
+  "navigation"
+  "main";
+  }
+
+.header {
+  grid-area: header;
+}
+.navigation {
+  grid-area: nav;
+}
+.main {
+  grid-area: main;
+}
+
+@media (min-width: 768px) {
+  .grid-container {
+    grid-template-columns: 55px 1fr;
+    grid-template-areas:  
+    "header header"
+    "navigation main"
+  }
+}
+
+.nav ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  list-style: none;
+  padding: 0 auto; 
+}
+
+
+
+.main {
+  display: grid;
+  }
+  @media (min-width: 768px) {
+  .main {
+    grid-template-columns: 50%;
+  }
+}
+
+@media (min-width: 768px) {
+    .traffic, .social {
+    grid-column: 1 / span 2;
+    }
+  }
+
+@media (min-width: 768px) {
+    .daily, .members, .message {
+    grid-column: 1 / span 1;
+    }
+  }
+
+@media (min-width: 768px) {
+    .mobile, .activity, .settings {
+    grid-column: 2 / span 1;
+    }
+  }

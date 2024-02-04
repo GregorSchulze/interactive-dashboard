@@ -1,0 +1,166 @@
+/* ===================================== 
+   Page Styles
+======================================== */  
+* {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0 auto;
+}
+
+
+/* ===================================== 
+   Header Styles
+======================================== */  
+.header {
+  display: flex;
+  align-items: center;
+  padding: 10px 5px;
+  color: white;
+  background-color: rgba(98, 97, 189, .9);
+}
+
+.webapp {
+  font-size: 1.2em;
+}
+.sup {
+  font-size: 7px;
+}
+
+.bell-icon {
+  width: 20px;  
+  height: 20px; 
+  fill: white;
+}
+
+.horizontale-linie {
+  width: .01em;
+  height: 30px;
+  background-color: #b3b3b3;
+  margin: 0;
+}
+
+.user-img-1 {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.name {
+  font-size: .8em;;
+}
+
+/* ===================================== 
+   Navigation Styles
+======================================== */  
+.nav {
+  background-color: rgba(75, 73, 142, 0.9);
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  padding: 0; 
+}
+
+.nav img,
+.nav-icon {
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  fill: white;
+}
+
+
+/* ===================================== 
+   Main Styles
+======================================== */
+.dashboard-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.headline {
+  font-size: 15px;
+  margin: 0 15px;
+}
+
+.tab {
+  width: 100%;
+}
+
+#username {
+  width: 100%;
+  height: 65px;
+  background-color: #F4F6F6;
+  border-top: #fff;
+  border-right: #fff;
+  border-left: 1px solid #BCC8C8; 
+  border-bottom: 1px solid #BCC8C8;
+  box-shadow: 0 0 1px;
+}
+
+ /* ===================================== 
+   Traffic
+======================================== */
+.traffic {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  padding: 10px;
+}
+
+.traffic-nav {
+  display: flex;
+  padding: 0;
+}
+.traffic-nav-link {
+  list-style-type: none;
+  padding: 10px;
+}
+
+ /* ===================================== 
+   Social Stats
+======================================== */
+.social-container-facebook,
+.social-container-instagram,
+.social-container-twitter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin: 10px;
+  background-color: rgb(231, 231, 231);
+  border-radius: 5px;
+}
+
+.social-image {
+  width: 60px;  
+  height: 60px;
+}
+
+ /* ===================================== 
+   Members
+======================================== */
+
+.members  {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* ===================================== 
+   Grid Styles
+======================================== */  
+/* .grid-div {
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-gap: 20px;
+  } */
+
