@@ -20,9 +20,30 @@ h1, h3 {
   text-transform: uppercase;
 }
 
-.section-line {
-  width: 100%;
+/* ===================================== 
+   Section Border Style
+======================================== */  
+.daily-border {
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
 }
+
+.mobile-border,
+.widget-container {
+  border-bottom: 1px solid grey;
+}
+
+.social-container {
+  border-bottom: 1px solid grey;
+  padding: 1vh 0;
+}
+
+.member-container,
+.recent-activity-container {
+  border-bottom: 1px solid grey;
+  padding: 1vh 0;
+}
+
 
 /* ===================================== 
    Header Styles
@@ -63,7 +84,7 @@ h1, h3 {
 }
 
 #bell-icon:hover {
-  fill: rgba(22, 17, 183, 0.9);
+  fill: rgba(75, 73, 142, 0.9);
   transform: scale(1.2);
   transition: 0.7s;
 }
@@ -97,7 +118,7 @@ h1, h3 {
 
 .name {
   font-size: .6em;
-  margin-left: 2vh;
+  margin-left: 1vh;
 }
 
 /* ===================================== 
@@ -134,16 +155,14 @@ a {
 /* ===================================== 
    Main Styles
 ======================================== */
-/* .main {
-  margin: 0 2vh;
-} */
 
 
 .headline,
-.traffic-header,
 .widget-container,
-section
+section,
+.alert
 {
+  padding: 1vh 0;
   margin: 0 2vh;
 }
 
@@ -173,14 +192,35 @@ section
   box-shadow: 0 0 1px;
 }
 
+.alert-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.alert {
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: white;
+  background-color: rgba(75, 73, 142, 0.9);
+  border-radius: 5px;
+  font-size: 18px;
+
+}
+
+.alert p {
+  padding: 0 10px;
+  margin: 0;
+}
+
  /* ===================================== 
    Traffic
 ======================================== */
 .traffic {
   display: flex;
   flex-direction: column;
-  margin: 0;
-  padding: 0;
 }
 
 .traffic-nav {
@@ -206,15 +246,24 @@ section
   transition: 0.4s;
 }
 
+/* ===================================== 
+   Charts
+======================================== */ 
+
+ 
+
+
  /* ===================================== 
    Social Stats
 ======================================== */
-.social {
+
+
+.social-container {
   display: flex;
   flex-direction: column;
 }
 
-.social-container {
+.social-child {
   display: flex;
   align-items: center;
   padding: 10px;
@@ -271,16 +320,16 @@ svg {
 }
 
 
-
  /* ===================================== 
    Members
 ======================================== */
+
 
 .profile-image {
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  margin: 5px;
+  margin-right: 5px;
 }
 
 .member-container {
@@ -289,7 +338,12 @@ svg {
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin: 15px 0;
+  margin: 1vh 0;
+}
+
+.member-container a {
+  text-decoration: none;
+  color: rgba(75, 73, 142, 0.9);
 }
 
 .members_text {
@@ -318,7 +372,7 @@ hr {
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin: 15px;
+  margin: 1vh 0;
 }
 
 .recent-activity-container p {
@@ -347,7 +401,8 @@ hr {
   margin: 50px;
 }
 
-.form-field {
+.userField {
+  padding: 10px;
   width: 100%;
   height: 5vh;
   margin-bottom: 2.5vh;
@@ -357,7 +412,8 @@ hr {
 }
 
 
-.form-area {
+.messageField {
+  padding: 10px;
   width: 100%;
   height: 15vh;
   margin-bottom: 2.5vh;
@@ -370,7 +426,7 @@ hr {
   width: 100%;
   height: 5vh;
   color: white;
-  margin-bottom: 2.5vh;
+  margin-bottom: 1vh;
   background-color:#8288ef;
   border: solid 1px #b3b3b3;
   border-radius: 5px;
@@ -446,6 +502,7 @@ hr {
 #timezone {
   display: flex;
   justify-content: space-between;
+  padding: 10px;
   width: 100%;
   height: 5vh;
   margin: 0;
@@ -505,6 +562,40 @@ hr {
 }
 
 @media (min-width: 768px) {
+
+/* ===================================== 
+   Section Border Style
+======================================== */  
+
+  .daily-border{
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+    padding: 1vh 0;
+  }
+
+ .mobile-border {
+  border-top: 1px solid grey;
+  border-left: 1px solid grey;
+  border-bottom: 1px solid grey;
+  padding: 1vh 0;
+ }
+
+  .social-container,
+  .widget-container {
+    border-bottom: 1px solid grey;
+    padding: 1vh 0;
+  }
+
+  .member-container,
+  .recent-activity-container {
+    border-bottom: 1px solid grey;
+    padding: 1vh 0;
+  }
+
+  /* ===================================== 
+   Grid Layout
+======================================== */  
+
   .grid-container {
     grid-template-columns: 55px 1fr;
     grid-template-areas:
@@ -535,20 +626,23 @@ hr {
   .social,
   .members,
   .recent-activity,
-  .section-settings,
+  .message,
   .dropdown,
-  .settings
+  .settings,
+  .alert,
+  #traffic-chart,
+  #mobile-chart
   {
     grid-column: 1 / 3;
   }
 
-.social {
+.social-container {
   flex-direction: row;
   justify-content: space-between;
   gap: 10px;
 }
 
-.social-container {
+.social-child {
   width: 100vh;
 }
 
@@ -570,7 +664,48 @@ hr {
   }
 
   .toggle-switch {
-    margin-right: 35vh;
+    margin-right: 25vh;
+  }
+
+}
+
+@media (min-width: 1024px) {
+  .grid-container {
+    grid-template-columns: 55px 1fr;
+    grid-template-areas:
+      "header header"
+      "nav main";
+  }
+
+  .members,
+  .recent-activity,
+  .message,
+  .settings
+  #traffic-chart,
+  #mobile-chart
+  {
+    grid-column: 1 / 1;
+  }
+
+  .recent-activity,
+  .dropdown,
+  .settings
+  {
+    grid-column: 2 / 2;
+  }
+
+  .userField {
+    width: 100%;
+    height: 6.9vh;
+    margin: 15px;
+  }
+  
+  .messageField {
+    margin: 15px;
+  }
+
+  #timezone {
+    margin-top: 10px;
   }
 
 }
