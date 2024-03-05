@@ -20,6 +20,11 @@ h1, h3 {
   text-transform: uppercase;
 }
 
+p,
+a {
+  font-size: 1.5vh;
+}
+
 /* ===================================== 
    Section Border Style
 ======================================== */  
@@ -670,6 +675,46 @@ hr {
 }
 
 @media (min-width: 1024px) {
+
+  /* ===================================== 
+   Section Border Style
+======================================== */  
+.member-border {
+  border-top: 1px solid grey;
+  border-right: 1px solid grey;
+  border-bottom: 1px solid grey;
+  /* padding: 1vh 0; */
+}
+
+.recent-activity-border {
+  border-top: 1px solid grey;
+  border-right: 1px solid grey;
+  border-bottom: 1px solid grey;
+  /* padding: 1vh 0; */
+}
+
+.social-container,
+.widget-container {
+  border-bottom: none;
+}
+
+.member-container,
+.recent-activity-container {
+  border-bottom: 1px solid grey;
+  padding: 1vh 0;
+}
+
+.member-container:last-child,
+.recent-activity-container:last-child {
+  border-bottom: none;
+  /* padding: 1vh 0; */
+}
+
+
+/* ===================================== 
+ Grid Layout
+======================================== */
+
   .grid-container {
     grid-template-columns: 55px 1fr;
     grid-template-areas:
