@@ -629,8 +629,11 @@ hr {
   .dashboard-header,
   .traffic,
   .social,
-  .members,
-  .recent-activity,
+  /* .members, */
+  .member-border,
+
+  /* .recent-activity, */
+  .recent-activity-border,
   .message,
   .dropdown,
   .settings,
@@ -722,8 +725,10 @@ hr {
       "nav main";
   }
 
-  .members,
-  .recent-activity,
+  /* .members, */
+  .member-border,
+  /* .recent-activity, */
+  .recent-activity-border,
   .message,
   .settings
   #traffic-chart,
@@ -732,7 +737,8 @@ hr {
     grid-column: 1 / 1;
   }
 
-  .recent-activity,
+  /* .recent-activity, */
+  .recent-activity-border,
   .dropdown,
   .settings
   {
