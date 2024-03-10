@@ -535,7 +535,7 @@ hr {
   background-color:#b3b3b3;
 }
 
-.settings-button {
+.settingsButton {
   display: flex;
   justify-content: space-between;
   margin: 15px 0;

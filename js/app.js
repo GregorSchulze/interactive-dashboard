@@ -15,7 +15,18 @@ alertBanner.addEventListener("click", e => {
    if (element.classList.contains("alert-banner-close")) {
       alertBanner.style.display="none"
    }
-})
+});
+
+/* ===================================== 
+   Notification
+======================================== */  
+const bellIcon= document.getElementsByClassName("bell-icon")[0];
+
+bellIcon.addEventListener("click", () => {
+    alert("Message1: You have a Message from Joniko Samasori.\nMessage 2: Paul A. want to left a comment on you last post.");
+    // const notification = document.getElementById('notifications');
+    // notification.classList.remove('notification');
+});
 
 
 /* ===================================== 
@@ -59,6 +70,17 @@ let trafficChart = new Chart(trafficCanvas, {
    data: trafficData,
    options: trafficOptions
 });
+
+// Traffic Chart DAILY
+
+
+
+// Traffic Chart WEEKLY
+
+
+
+// Traffic Chart MONTHLY
+
 
 // Daily Chart
 
@@ -153,3 +175,19 @@ send.addEventListener('click', () => {
         alert(`Message successfully sent to: ${user.value}`);
     }
 });
+
+
+/* ===================================== 
+   Settings Section
+======================================== */  
+
+const save = document.getElementById("save");
+const settingsButton= document.getElementById("settingsButton");
+
+settingsButton.addEventListener("click", (event)=>{
+    if(event.target.className === "safe-button") {
+        alert("Youre Settings are saved!");
+  } else {
+        alert("The process was aborted!");
+  }     
+})
