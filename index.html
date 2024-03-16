@@ -80,10 +80,10 @@
         <div class="traffic-header">
           <h3>Traffic</h3>
           <ul class="traffic-nav">
-            <li class="traffic-nav-link">Hourly</li>
-            <li class="traffic-nav-link">Daily</li>
-            <li class="traffic-nav-link">Weekly</li>
-            <li class="traffic-nav-link">Monthly</li>
+            <li class="traffic-nav-link" id="hourly">Hourly</li>
+            <li class="traffic-nav-link" id="daily">Daily</li>
+            <li class="traffic-nav-link" id="weekly">Weekly</li>
+            <li class="traffic-nav-link" id="monthly">Monthly</li>
           </ul>
         </div>
         <div class="widget-container-full">
@@ -252,8 +252,9 @@
       <!-- messaging widget -->
       <section class="message" id="message">
         <h3>Message User</h3>
-        <form class="widget-container">
-          <input type="text" placeholder="Search for user" class="userField" id="userField">
+        <form class="widgetForm" id="widgetForm">
+          <input type="text" placeholder="Search for User" class="userField" id="userField">
+          <div id="resultBox"></div>
           <textarea placeholder="Message for user" class="messageField" id= "messageField" ></textarea>
           <button class="button-primary" id="send" >Send</button>
         </form>

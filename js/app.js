@@ -71,21 +71,113 @@ let trafficChart = new Chart(trafficCanvas, {
    options: trafficOptions
 });
 
-// Traffic Chart DAILY
+
+// Traffic Chart Menu
+
+
+// Holen der DOM-Elemente
+const hourly = document.getElementById("hourly");
+const daily = document.getElementById("daily");
+const weekly = document.getElementById("weekly");
+const monthly = document.getElementById("monthly");
+
+// Traffic Chart Daten für verschiedene Zeiträume
+const hourlyData = {
+    labels: ["00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"],
+    datasets: [{
+        data: [30, 25, 40, 35, 50, 45, 60, 55, 70, 65, 80, 75, 90, 85, 100, 95, 110, 105, 120, 115, 130, 125, 140, 135],
+        backgroundColor: 'rgba(116, 119, 191, .3)',
+        borderWidth: 1,
+    }]
+};
+
+const dailyData = {
+    labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+    datasets: [{
+        data: [120, 130, 110, 140, 150, 130, 140],
+        backgroundColor: 'rgba(116, 119, 191, .3)',
+        borderWidth: 1,
+    }]
+};
+
+const weeklyData = {
+    labels: ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5"],
+    datasets: [{
+        data: [500, 550, 600, 650, 700],
+        backgroundColor: 'rgba(116, 119, 191, .3)',
+        borderWidth: 1,
+    }]
+};
+
+const monthlyData = {
+    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    datasets: [{
+        data: [2500, 2800, 2700, 3000, 3200, 3100, 3300, 3500, 3400, 3700, 3600, 3800],
+        backgroundColor: 'rgba(116, 119, 191, .3)',
+        borderWidth: 1,
+    }]
+};
+
+// Funktion zum Anzeigen der Charts.
+
+function showHourlyChart() {
+    if (trafficChart) {
+        trafficChart.destroy();
+    }
+    trafficChart = new Chart(trafficCanvas, {
+        type: 'line',
+        data: hourlyData,
+        options: trafficOptions
+    });
+}
+
+function showDailyChart() {
+    if (trafficChart) {
+        trafficChart.destroy();
+    }
+    trafficChart = new Chart(trafficCanvas, {
+        type: 'line',
+        data: dailyData,
+        options: trafficOptions
+    });
+}
+
+function showWeeklyChart() {
+    if (trafficChart) {
+        trafficChart.destroy();
+    }
+    trafficChart = new Chart(trafficCanvas, {
+        type: 'line',
+        data: weeklyData,
+        options: trafficOptions
+    });
+}
+
+function showMonthlyChart() {
+    if (trafficChart) {
+        trafficChart.destroy();
+    }
+    trafficChart = new Chart(trafficCanvas, {
+        type: 'line',
+        data: monthlyData,
+        options: trafficOptions
+    });
+}
 
 
 
-// Traffic Chart WEEKLY
+// Event-Listener für die Menüpunkte
+hourly.addEventListener('click', showHourlyChart);
+daily.addEventListener('click', showDailyChart);
+weekly.addEventListener('click', showWeeklyChart);
+monthly.addEventListener('click', showMonthlyChart);
 
-
-
-// Traffic Chart MONTHLY
 
 
 // Daily Chart
 
 const dailyCanvas = document.getElementById("daily-chart");
-const dailyData = {
+const dailyTrafficData = {
     labels: ["S", "M", "T", "W", "T", "F", "S"],
     datasets: [{
         label: '# of hits',
@@ -111,7 +203,7 @@ const dailyOptions = {
 
 let dailyChart = new Chart(dailyCanvas, {
     type:'bar',
-    data: dailyData,
+    data: dailyTrafficData,
     options: dailyOptions
 });
 
@@ -176,12 +268,55 @@ send.addEventListener('click', () => {
     }
 });
 
+/* ===================================== 
+   Autocomplete Feature 
+======================================== */
+
+let availableKeywords = [
+    "Victoria Chambers",
+    "Dale Byrd",
+    "Dawn Wood",
+    "Dan Oliver"
+];
+
+const inputBox = document.getElementById("userField");
+const resultBox = document.getElementById("resultBox");
+
+// Event-Listener für die Eingabe
+inputBox.addEventListener("input", function () {
+    const userInput = inputBox.value.toLowerCase();
+    const matchedKeywords = availableKeywords.filter(keyword =>
+        keyword.toLowerCase().includes(userInput)
+    );
+
+    displayResults(matchedKeywords);
+});
+
+// Funktion zum Anzeigen der Suchergebnisse
+function displayResults(matchedKeywords) {
+    // Lösche vorherige Ergebnisse
+    resultBox.innerHTML = "";
+
+    // Zeige neue Ergebnisse an
+    matchedKeywords.forEach(keyword => {
+        const suggestion = document.createElement("div");
+        suggestion.textContent = keyword;
+        suggestion.addEventListener("click", function () {
+            // Füge den ausgewählten Vorschlag in das Eingabefeld ein
+            inputBox.value = keyword;
+            // Lösche die Ergebnisbox
+            resultBox.innerHTML = "";
+        });
+        resultBox.appendChild(suggestion);
+    });
+}
+
+
 
 /* ===================================== 
-   Settings Section
+   Alert Safe & Cancel
 ======================================== */  
 
-const save = document.getElementById("save");
 const settingsButton= document.getElementById("settingsButton");
 
 settingsButton.addEventListener("click", (event)=>{
@@ -191,3 +326,51 @@ settingsButton.addEventListener("click", (event)=>{
         alert("The process was aborted!");
   }     
 })
+
+/* ===================================== 
+   Local Storage
+======================================== */
+
+// Save Settings with Local Storage
+// Holen der DOM-Elemente
+const emailToggle = document.getElementById('emailToggle');
+const publicProfileToggle = document.getElementById('publicProfileToggle');
+const timezoneDropdown = document.getElementById('timezone');
+const saveButton = document.getElementById('save');
+const cancelButton = document.getElementById('cancel');
+
+// Laden der Einstellungen aus dem Local Storage
+function loadSettings() {
+    const emailSetting = localStorage.getItem('emailSetting') === 'true';
+    const publicProfileSetting = localStorage.getItem('publicProfileSetting') === 'true';
+    const timezoneSetting = localStorage.getItem('timezoneSetting') || 'Select a Timezone';
+
+    emailToggle.checked = emailSetting;
+    publicProfileToggle.checked = publicProfileSetting;
+    timezoneDropdown.value = timezoneSetting;
+}
+
+// Speichern der Einstellungen im Local Storage
+function saveSettings() {
+    localStorage.setItem('emailSetting', emailToggle.checked);
+    localStorage.setItem('publicProfileSetting', publicProfileToggle.checked);
+    localStorage.setItem('timezoneSetting', timezoneDropdown.value);
+}
+
+// Funktion zum Löschen der Einstellungen (optional)
+function clearSettings() {
+    localStorage.removeItem('emailSetting');
+    localStorage.removeItem('publicProfileSetting');
+    localStorage.removeItem('timezoneSetting');
+    loadSettings(); // aktualisiere die Anzeige nach dem Löschen
+}
+
+// Event-Listener für die Buttons
+saveButton.addEventListener('click', saveSettings);
+cancelButton.addEventListener('click', clearSettings);
+
+// Laden der Einstellungen, wenn die Seite geladen wird
+loadSettings();
+
+
+
