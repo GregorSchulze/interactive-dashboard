@@ -72,8 +72,9 @@ let trafficChart = new Chart(trafficCanvas, {
 });
 
 
-// Traffic Chart Menu
-
+/* ===================================== 
+   CHART Menu
+======================================== */  
 
 // Holen der DOM-Elemente
 const hourly = document.getElementById("hourly");
@@ -310,6 +311,7 @@ function displayResults(matchedKeywords) {
         resultBox.appendChild(suggestion);
     });
 }
+
 
 
 

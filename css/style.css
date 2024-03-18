@@ -279,8 +279,8 @@ section,
   display: flex;
   justify-content: center;
   margin: 1em;
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%; 
   margin: 10px;
   background-color: rgba(75, 73, 142, 0.9); 
@@ -297,7 +297,7 @@ svg {
 }
 
 .social-text {
-  margin: 0 15px;
+  margin: 0 10px;
 }
 
 .social-text p:first-of-type {
@@ -379,6 +379,12 @@ hr {
 
 .recent-activity-container p {
   margin: 0;
+}
+
+.open-recent-activity-container {
+  display: none;
+  font-size: 2.5vh;
+  color:rgba(98, 97, 189, .9);
 }
 
 
@@ -608,30 +614,30 @@ hr {
    Section Border Style
 ======================================== */  
 
-  .daily-border{
-    border-top: 1px solid grey;
-    border-bottom: 1px solid grey;
-    padding: 1vh 0;
-  }
-
- .mobile-border {
+.daily-border{
   border-top: 1px solid grey;
-  border-left: 1px solid grey;
   border-bottom: 1px solid grey;
   padding: 1vh 0;
- }
+}
 
-  .social-container,
-  .widgetForm {
-    border-bottom: 1px solid grey;
-    padding: 1vh 0;
-  }
+.mobile-border {
+border-top: 1px solid grey;
+border-left: 1px solid grey;
+border-bottom: 1px solid grey;
+padding: 1vh 0;
+}
 
-  .member-container,
-  .recent-activity-container {
-    border-bottom: 1px solid grey;
-    padding: 1vh 0;
-  }
+.social-container,
+.widgetForm {
+  border-bottom: 1px solid grey;
+  padding: 1vh 0;
+}
+
+.member-container,
+.recent-activity-container {
+  border-bottom: 1px solid grey;
+  padding: 1vh 0;
+}
 
   /* ===================================== 
    Grid Layout
@@ -657,6 +663,12 @@ hr {
     padding: 30px; 
   }
 
+  .traffic-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
   .main {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -665,10 +677,7 @@ hr {
   .dashboard-header,
   .traffic,
   .social,
-  /* .members, */
   .member-border,
-
-  /* .recent-activity, */
   .recent-activity-border,
   .message,
   .dropdown,
@@ -682,7 +691,7 @@ hr {
 
 .social-container {
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
   gap: 10px;
 }
 
@@ -693,6 +702,12 @@ hr {
   .member-container,
   .recent-activity-container {
     flex-direction: row;
+  }
+
+  .open-recent-activity-container {
+    display: inline;
+    font-size: 2.5vh;
+    color:rgba(98, 97, 189, .9);
   }
 
   .member-text {
